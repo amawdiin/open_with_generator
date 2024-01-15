@@ -24,6 +24,13 @@ def replace_and_write(APP_NAME, APP_PATH, registry_keys):
     with open('setup.reg', 'w') as f:
         f.write(output_string)
 
+def convert_path(path):
+    # Replace single backslashes with double backslashes
+    new_path = path.replace("\\", "\\\\")
+    # Add double quotes around the path
+    new_path = f'\\"{new_path}\\"'
+    return new_path
+
 def generate_setup_content(settings):
     setup_file = ''
     setup_template = defaultdict()
@@ -54,6 +61,8 @@ def generate_setup_content(settings):
 [HKEY_CLASSES_ROOT\Directory\background\shell\OpenWithAPP_NAME\command]
 @="\"APP_PATH\" \"%V\""
     '''
+    settings['APP_PATH'] = convert_path(settings['APP_PATH'])
+
     if settings['file'].lower() != "n":
         setup_template['file'] = setup_template['file'].replace('APP_NAME', settings['APP_NAME'])
         setup_template['file'] = setup_template['file'].replace('APP_PATH', settings['APP_PATH'])
