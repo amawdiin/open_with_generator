@@ -1,9 +1,0 @@
-
-
-[HKEY_CLASSES_ROOT\*\shell\OpenWithExample]
-@="Open with Example"
-"Icon"="C:\Program Files\Example\example.exe"
-
-[HKEY_CLASSES_ROOT\*\shell\OpenWithExample\command]
-@="\"C:\Program Files\Example\example.exe\" \"%1\""
-    
