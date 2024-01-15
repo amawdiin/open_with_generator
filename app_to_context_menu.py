@@ -92,9 +92,9 @@ def main():
     settings['APP_NAME'] = input('Enter app name, example: AppName\n')
     settings['APP_PATH'] = input('\nEnter app path, example: C:\\Program Files\\AppName\\app.exe\n')
     directory = create_directory(settings['APP_NAME'])
-    print(f'Directory {directory} created successfully!')
+    print(f'\nDirectory {directory} created successfully!')
 
-    print('Do you want your app to be present in context menu when right clicking:')
+    print('\nDo you want your app to be present in context menu when right clicking:')
     settings["file"] = input('file (y/n): ')
     settings["directory"] = input('directory (y/n): ')
     settings["directory_background"] = input('directory background(y/n): ')
@@ -104,7 +104,7 @@ def main():
 
     with open(f'{directory}/setup.reg', 'w') as f:
         f.write(setup_file)
-    print('File setup.reg created successfully!')
+    print('\nFile setup.reg created successfully!')
     with open(f'{directory}/remove.bat', 'w') as f:
         f.write(uninstall_file)
     print('File remove.bat created successfully!')
