@@ -5,5 +5,9 @@ setup.reg and remove.bat, run setup.reg to put the app in context menu and remov
 to remove it from context menu.
 
 ## showcase:
+![usage](./images/usage.png)
+
+![result](./images/result.png)
+
 
 
