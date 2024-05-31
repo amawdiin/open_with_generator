@@ -53,6 +53,8 @@ def generate_setup_content(app_name, app_path, registry_keys):
     }
     app_path = convert_path(app_path)
 
+    setup_file += "Windows Registry Editor Version 5.00\n"
+
     if registry_keys['file'].lower() == "y":
         setup_file += setup_template['file'].format(app_name=app_name, app_path=app_path)
     if registry_keys['directory'].lower() == "y":
